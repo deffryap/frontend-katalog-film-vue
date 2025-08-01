@@ -16,6 +16,10 @@ Ini adalah bagian **Frontend** dari aplikasi **Katalog Film**, dibangun mengguna
 - **Dasbor Admin Aman** - Halaman khusus admin dengan proteksi JWT dan fitur CRUD (Create, Read, Update, Delete)
 - **Manajemen State** - Menggunakan Pinia untuk manajemen status login admin dan data lainnya
 
+<p align="center">
+  <img src="public/dasborKF.png" alt="Dasbor Katalog Film"/>
+</p>
+
 ## 🚀 Teknologi yang Digunakan
 
 - **Vue 3** (Composition API)
@@ -25,9 +29,6 @@ Ini adalah bagian **Frontend** dari aplikasi **Katalog Film**, dibangun mengguna
 - **Tailwind CSS** untuk styling
 - **Axios** untuk permintaan API
 
-<p align="center">
-  <img src="public/image.png" alt="Katalog Film"/>
-</p>
 
 ## 📂 Struktur Direktori
 
