@@ -2,6 +2,10 @@
 
 Ini adalah bagian **Frontend** dari aplikasi **Katalog Film**, dibangun menggunakan **Vue.js** dan di-styling dengan **Tailwind CSS**. Aplikasi ini menampilkan daftar film dan serial TV, halaman detail, serta dasbor admin yang aman untuk mengelola konten.
 
+<p align="center">
+  <img src="public/image.png" alt="Katalog Film"/>
+</p>
+
 ## ✨ Fitur Utama
 
 - **Tampilan Responsif** - Didesain untuk bekerja dengan baik di desktop, tablet, dan mobile
