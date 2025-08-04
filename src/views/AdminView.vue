@@ -32,20 +32,53 @@
             <h2 class="text-xl font-semibold mb-4">{{ formMode === 'add' ? 'Tambah Konten Baru' : 'Edit Konten' }}</h2>
             <form @submit.prevent="handleSubmit">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input v-model="form.Title" type="text" placeholder="Judul" class="p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded" required>
-                    <select v-model="form.Type" class="p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded">
-                        <option value="movie">Film</option>
-                        <option value="series">TV Series</option>
-                    </select>
-                    <input v-model="form.Year" type="text" placeholder="Tahun" class="p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded">
-                    <input v-model="form.imdbID" type="text" placeholder="IMDb ID" class="p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded" required :disabled="formMode === 'edit'">
-                    <input v-model="form.Poster" type="text" placeholder="URL Poster" class="p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded">
-                    <input v-model="form.Director" type="text" placeholder="Sutradara" class="p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded">
-                    <input v-model="form.Genre" type="text" placeholder="Genre (pisahkan dengan koma)" class="p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded">
-                    <input v-model="form.Runtime" type="text" placeholder="Durasi" class="p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded">
-                    <input v-model="form.TrailerURL" type="text" placeholder="URL Trailer YouTube" class="p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded md:col-span-2">
-                    <textarea v-model="form.Plot" placeholder="Sinopsis" class="p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded md:col-span-2" rows="3"></textarea>
-                    <textarea v-model="form.Actors" placeholder="Pemeran (pisahkan dengan koma)" class="p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded md:col-span-2" rows="2"></textarea>
+                    <div>
+                        <label for="title" class="block text-sm font-medium mb-1">Judul</label>
+                        <input v-model="form.Title" id="title" type="text" placeholder="Judul" class="w-full p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded" required>
+                    </div>
+                    <div>
+                        <label for="type" class="block text-sm font-medium mb-1">Tipe</label>
+                        <select v-model="form.Type" id="type" class="w-full p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded">
+                            <option value="movie">Film</option>
+                            <option value="series">TV Series</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="year" class="block text-sm font-medium mb-1">Tahun</label>
+                        <input v-model="form.Year" id="year" type="text" placeholder="Tahun" class="w-full p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded">
+                    </div>
+                    <div>
+                        <label for="imdbID" class="block text-sm font-medium mb-1">IMDb ID</label>
+                        <input v-model="form.imdbID" id="imdbID" type="text" placeholder="IMDb ID" class="w-full p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded" required :disabled="formMode === 'edit'">
+                    </div>
+                    <div>
+                        <label for="poster" class="block text-sm font-medium mb-1">URL Poster</label>
+                        <input v-model="form.Poster" id="poster" type="text" placeholder="URL Poster" class="w-full p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded">
+                    </div>
+                    <div>
+                        <label for="director" class="block text-sm font-medium mb-1">Sutradara</label>
+                        <input v-model="form.Director" id="director" type="text" placeholder="Sutradara" class="w-full p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded">
+                    </div>
+                    <div>
+                        <label for="genre" class="block text-sm font-medium mb-1">Genre</label>
+                        <input v-model="form.Genre" id="genre" type="text" placeholder="Genre (pisahkan dengan koma)" class="w-full p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded">
+                    </div>
+                    <div>
+                        <label for="runtime" class="block text-sm font-medium mb-1">Durasi</label>
+                        <input v-model="form.Runtime" id="runtime" type="text" placeholder="Durasi" class="w-full p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="trailer" class="block text-sm font-medium mb-1">URL Trailer YouTube</label>
+                        <input v-model="form.TrailerURL" id="trailer" type="text" placeholder="URL Trailer YouTube" class="w-full p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="plot" class="block text-sm font-medium mb-1">Sinopsis</label>
+                        <textarea v-model="form.Plot" id="plot" placeholder="Sinopsis" class="w-full p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded" rows="3"></textarea>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="actors" class="block text-sm font-medium mb-1">Pemeran</label>
+                        <textarea v-model="form.Actors" id="actors" placeholder="Pemeran (pisahkan dengan koma)" class="w-full p-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded" rows="2"></textarea>
+                    </div>
                 </div>
                 <div class="mt-4">
                     <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Simpan</button>
