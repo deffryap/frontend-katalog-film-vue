@@ -40,7 +40,7 @@ const searchQuery = ref('');
 const activeCategory = ref('all');
 const loading = ref(true);
 const error = ref(null);
-const API_URL = 'http://localhost:3000/api/movies';
+const API_URL = 'https://katalog-film-be.netlify.app/api/movies';
 
 let debounceTimer;
 async function fetchMovies() {
