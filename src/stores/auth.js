@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import axios from 'axios'
 import router from '../router'
 
-const API_URL = 'http://localhost:3000/api'
+const API_URL = 'https://katalog-film-be.netlify.app/api'
 
 export const useAuthStore = defineStore('auth', () => {
   const user = ref(JSON.parse(sessionStorage.getItem('user')))
