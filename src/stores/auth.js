@@ -17,7 +17,7 @@ export const useAuthStore = defineStore('auth', () => {
 
   async function login(credentials) {
     try {
-      const { data } = await axios.post(`${API_URL}/auth/login`, credentials)
+      const { data } = await axios.post(`${API_URL}auth/login`, credentials)
       user.value = data.user
       token.value = data.token
       sessionStorage.setItem('user', JSON.stringify(data.user))
