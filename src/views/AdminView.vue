@@ -132,7 +132,7 @@ const formMode = ref('add');
 const defaultForm = { Title: '', Year: '', imdbID: '', Type: 'movie', Poster: '', Plot: '', Director: '', Actors: '', Genre: '', Runtime: '', TrailerURL: '' };
 const form = ref({ ...defaultForm });
 let editingMovieId = null;
-const API_URL = 'https://katalog-film-be.netlify.app/api/movies';
+const API_URL = __API_URL__;
 const searchQuery = ref('');
 let debounceTimer;
 

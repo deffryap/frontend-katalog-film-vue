@@ -49,7 +49,7 @@ const route = useRoute();
 const movie = ref(null);
 const loading = ref(true);
 const error = ref(null);
-const API_URL = 'https://katalog-film-be.netlify.app/api/movies';
+const API_URL = __API_URL__;
 
 const embedUrl = computed(() => {
   if (!movie.value || !movie.value.TrailerURL) return '';

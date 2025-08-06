@@ -73,14 +73,25 @@ Instal semua paket yang dibutuhkan oleh proyek:
 npm install
 ```
 
-#### 3. Hubungkan ke Backend
+#### 3. Konfigurasi Environment
 
-Pastikan salah satu backend (MongoDB atau MySQL) sudah berjalan. Kemudian, buka file `src/stores/auth.js` dan pastikan variabel `API_URL` menunjuk ke alamat backend Anda yang benar.
+Buat file `.env` berdasarkan `env.example` dan sesuaikan URL API:
 
-```javascript
-// src/stores/auth.js
-const API_URL = 'http://localhost:3000/api'; // Ganti port jika perlu (misal: 3001 untuk MySQL)
+```bash
+cp env.example .env
 ```
+
+Edit file `.env` dan sesuaikan URL backend:
+
+```env
+# Untuk development lokal
+VITE_API_URL=http://localhost:3000/api/movies
+
+# Untuk production
+# VITE_API_URL=https://katalog-film-be.netlify.app/api/movies
+```
+
+Pastikan backend sudah berjalan sebelum menjalankan frontend.
 
 #### 4. Jalankan Server Pengembangan
 
