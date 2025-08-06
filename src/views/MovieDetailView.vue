@@ -69,7 +69,7 @@ const embedUrl = computed(() => {
 onMounted(async () => {
   try {
     const movieId = route.params.id;
-    const { data } = await axios.get(`${API_URL}/api/movies/${movieId}`);
+    const { data } = await axios.get(`${API_URL}api/movies/${movieId}`);
     movie.value = data;
   } catch (err) {
     error.value = "Gagal mengambil detail film.";
