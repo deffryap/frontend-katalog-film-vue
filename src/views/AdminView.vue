@@ -161,7 +161,7 @@ async function fetchMovies() {
     if (searchQuery.value) {
         params.append('search', searchQuery.value);
     }
-    const response = await axios.get(`${API_URL}?${params.toString()}`);
+    const response = await axios.get(`${API_URL}/api/movies?${params.toString()}`);
     // Urutkan data berdasarkan judul (A-Z)
     movies.value = response.data.sort((a, b) => a.Title.localeCompare(b.Title));
   } catch (error) {
@@ -193,9 +193,9 @@ function closeForm() {
 async function handleSubmit() {
   try {
     if (formMode.value === 'add') {
-      await axios.post(API_URL, form.value);
+      await axios.post(`${API_URL}/api/movies`, form.value);
     } else {
-      await axios.put(`${API_URL}/${editingMovieId}`, form.value);
+      await axios.put(`${API_URL}/api/movies/${editingMovieId}`, form.value);
     }
     closeForm();
     fetchMovies();
@@ -218,7 +218,7 @@ function editMovie(movie) {
 async function deleteMovie(id) {
   if (confirm("Anda yakin ingin menghapus konten ini?")) {
     try {
-      await axios.delete(`${API_URL}/${id}`);
+      await axios.delete(`${API_URL}/api/movies/${id}`);
       fetchMovies();
     } catch (error) {
       console.error("Gagal menghapus:", error);

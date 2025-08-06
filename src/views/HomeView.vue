@@ -50,7 +50,7 @@ async function fetchMovies() {
     const params = new URLSearchParams();
     if (searchQuery.value) params.append('search', searchQuery.value);
     if (activeCategory.value !== 'all') params.append('type', activeCategory.value);
-    const response = await axios.get(`${API_URL}?${params.toString()}`);
+    const response = await axios.get(`${API_URL}/api/movies?${params.toString()}`);
     // Urutkan data berdasarkan judul (A-Z)
     movies.value = response.data.sort((a, b) => a.Title.localeCompare(b.Title));
   } catch (err) {
