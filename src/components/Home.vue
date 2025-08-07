@@ -46,7 +46,7 @@ const movies = ref([]);
 const searchQuery = ref('');
 const loading = ref(true);
 const error = ref(null);
-const API_URL = 'http://localhost:3000/api/movies'; // Sesuaikan port
+const API_URL = __API_URL__; // Sesuaikan port
 
 async function fetchMovies() {
   loading.value = true;

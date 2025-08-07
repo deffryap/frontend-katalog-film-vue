@@ -193,9 +193,9 @@ function closeForm() {
 async function handleSubmit() {
   try {
     if (formMode.value === 'add') {
-      await axios.post(`${API_URL}api/movies`, form.value);
+      await axios.post(`${API_URL}/api/movies`, form.value);
     } else {
-      await axios.put(`${API_URL}api/movies/${editingMovieId}`, form.value);
+      await axios.put(`${API_URL}/api/movies/${editingMovieId}`, form.value);
     }
     closeForm();
     fetchMovies();
@@ -218,7 +218,7 @@ function editMovie(movie) {
 async function deleteMovie(id) {
   if (confirm("Anda yakin ingin menghapus konten ini?")) {
     try {
-      await axios.delete(`${API_URL}api/movies/${id}`);
+      await axios.delete(`${API_URL}/api/movies/${id}`);
       fetchMovies();
     } catch (error) {
       console.error("Gagal menghapus:", error);
