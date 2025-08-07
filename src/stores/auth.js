@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import axios from 'axios'
 import router from '../router'
 
-const API_URL = __API_URL__
+const API_URL = __API_URL__;
 
 export const useAuthStore = defineStore('auth', () => {
   const user = ref(JSON.parse(sessionStorage.getItem('user')))
